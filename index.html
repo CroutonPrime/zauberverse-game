@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Zauberverse prototype: a three-lane competitive browser card game."
+  />
+  <title>Zauberverse — Prototype 0.1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ZAUBERVERSE // PROTOTYPE 0.1</p>
+        <h1>Wraith: Blacksite Breach</h1>
+      </div>
+      <div class="topbar-actions">
+        <button id="rules-button" class="secondary-button" type="button">How to Play</button>
+        <button id="restart-button" class="secondary-button" type="button">Restart</button>
+      </div>
+    </header>
+
+    <section class="status-grid" aria-label="Match status">
+      <article class="leader-card enemy-leader">
+        <div class="leader-symbol">B</div>
+        <div>
+          <p class="leader-label">ENEMY LEADER</p>
+          <h2>The Blacksite</h2>
+          <p><span id="enemy-health">20</span> integrity</p>
+        </div>
+      </article>
+
+      <article class="turn-panel">
+        <p id="round-label">ROUND 1</p>
+        <strong id="message">Select a card, then choose a lane.</strong>
+      </article>
+
+      <article class="leader-card player-leader">
+        <div class="leader-symbol">W</div>
+        <div>
+          <p class="leader-label">YOUR LEADER</p>
+          <h2>Wraith</h2>
+          <p><span id="player-health">20</span> resolve</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="battlefield" class="battlefield" aria-label="Three-lane battlefield"></section>
+
+    <section class="command-bar">
+      <div class="energy-display">
+        <span>ENERGY</span>
+        <strong id="energy">5 / 10</strong>
+      </div>
+
+      <button id="end-turn-button" class="primary-button" type="button">
+        Resolve Round
+      </button>
+    </section>
+
+    <section class="hand-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR HAND</p>
+          <h2>Choose your deployment</h2>
+        </div>
+        <p id="deck-count">Deck: 0</p>
+      </div>
+      <div id="hand" class="hand" aria-label="Player hand"></div>
+    </section>
+  </main>
+
+  <dialog id="rules-dialog">
+    <div class="dialog-content">
+      <p class="eyebrow">FIELD BRIEFING</p>
+      <h2>How to play</h2>
+      <ol>
+        <li>Select a card from your hand.</li>
+        <li>Click an empty allied slot in one of the three lanes.</li>
+        <li>Deploy as many cards as your energy allows.</li>
+        <li>Press <strong>Resolve Round</strong>. The enemy deploys, then every lane fights.</li>
+        <li>An unopposed unit damages the opposing leader. Reduce The Blacksite to zero.</li>
+      </ol>
+      <p>
+        <strong>Phase Shield:</strong> the first incoming hit is ignored.
+        <br />
+        <strong>Mentor:</strong> Harrow strengthens your other deployed units.
+      </p>
+      <button id="close-rules-button" class="primary-button" type="button">Enter Match</button>
+    </div>
+  </dialog>
+
+  <script src="game.js"></script>
+</body>
+</html>
