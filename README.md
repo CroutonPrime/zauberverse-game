@@ -1,60 +1,56 @@
-# Zauberverse Game — Prototype 0.1
+# Zauberverse Moving Arena — Prototype 0.2
 
-A free, static browser-game prototype built with plain HTML, CSS and JavaScript.
+This build replaces the static turn-based prototype with a real-time Phaser arena.
 
-## What is included
+## What changed
 
-- Three tactical lanes
-- Wraith as the player leader
-- The Blacksite as the enemy leader
-- Energy and card deployment
-- Simple enemy AI
-- Simultaneous lane combat
-- Wraith-themed cards and abilities
-- Responsive desktop/mobile layout
+- Phaser 4.2.1 loaded through a CDN
+- Three real-time lanes
+- Click-to-deploy cards
+- Regenerating energy
+- Automatic unit movement
+- Automatic targeting and combat
+- Core health and win conditions
+- Enemy deployment AI
+- Placeholder attack, spawn, death and damage animations
+- A crude Wraith teleport jump
 
-## Play locally
+## Uploading to GitHub
 
-You can open `index.html` directly in a browser.
+Replace these existing repository files:
 
-For the most reliable preview, use a small local server. Python users can run:
+- `index.html`
+- `styles.css`
+- `game.js`
+- `README.md`
 
-```bash
-python -m http.server 8000
-```
+Commit the update. GitHub Pages will redeploy automatically.
 
-Then open `http://localhost:8000`.
+## Controls
 
-## Publish free with GitHub Pages
+1. Click one of the four cards at the bottom.
+2. Click a lane in the battlefield.
+3. The deployed unit automatically advances and fights.
+4. Destroy the Blacksite core before your Wraith core falls.
 
-1. Create a new **public** GitHub repository named `zauberverse-game`.
-2. Upload every file in this folder to the root of that repository.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and the `/ (root)` folder.
-6. Save.
+## Why the art is abstract
 
-The published address will normally be:
+This is a mechanics prototype. Colored pieces make it cheap and fast to test:
 
-`https://YOUR-USERNAME.github.io/zauberverse-game/`
+- movement speed
+- lane readability
+- targeting
+- attack timing
+- energy economy
+- match length
+- Wraith's teleport behavior
 
-## File map
+Character artwork and polished animation should be added after the basic match becomes enjoyable.
 
-- `index.html` — page structure
-- `styles.css` — visual design and responsive layout
-- `game.js` — cards, rules, enemy AI and combat
-- `README.md` — project instructions
+## Technology
 
-## Best next upgrades
+Phaser is loaded from:
 
-1. Test whether the three-lane match is fun.
-2. Adjust health, energy and card numbers.
-3. Replace placeholder card treatments with Zauberverse art.
-4. Add real leader powers.
-5. Add a deck-building screen.
-6. Save progress in the browser.
-7. Add online accounts and multiplayer only after the core match works.
+`https://cdnjs.cloudflare.com/ajax/libs/phaser/4.2.1/phaser.min.js`
 
-## Design principle
-
-Do not build the whole Zauberverse platform yet. Prove one satisfying match first.
+The game remains a static HTML/CSS/JavaScript site and works on GitHub Pages.
